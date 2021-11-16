@@ -48,7 +48,7 @@ async def _human_time_duration(seconds):
 
 
 @Client.on_message(
-    command(["start", f"start@{BOT_USERNAME}"]) & filters.private & ~filters.edited
+    command(["startop", f"startop@{BOT_USERNAME}"]) & filters.private & ~filters.edited
 )
 async def start_private(client: Client, message: Message):
     await message.reply_text(
@@ -89,7 +89,7 @@ async def start_private(client: Client, message: Message):
 
 
 @Client.on_message(
-    command(["start", f"start@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+    command(["startop", f"startop@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 async def start_group(client: Client, message: Message):
     current_time = datetime.utcnow()
@@ -117,7 +117,7 @@ async def start_group(client: Client, message: Message):
 
 
 @Client.on_message(
-    command(["help", f"help@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+    command(["helpop", f"helpop@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 async def help(client: Client, message: Message):
     await message.reply_text(
