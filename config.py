@@ -20,14 +20,14 @@ CMD_IMG = getenv("CMD_IMG", "https://telegra.ph/file/374e2bd35f02d1b2f6ae5.jpg")
 ALIVE_IMG = getenv("ALIVE_IMG", "https://telegra.ph/file/374e2bd35f02d1b2f6ae5.jpg")
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
-BOT_USERNAME = getenv("BOT_USERNAME", "Zaid2_Robot")
+BOT_USERNAME = getenv("BOT_USERNAME", "skyler_xbot")
 ASSISTANT_NAME = getenv("ASSISTANT_NAME", "zaid2_Assistant")
-GROUP_SUPPORT = getenv("GROUP_SUPPORT", "Superior_Support")
-UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "Superior_bots")
+GROUP_SUPPORT = getenv("GROUP_SUPPORT", "electrobot_support")
+UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "Electrobot_support")
 # fill there username without @
 OWNER_NAME = getenv("OWNER_NAME", "shivam9412")
 # fill with your nickname
-ALIVE_NAME = getenv("ALIVE_NAME", "Zaid")
+ALIVE_NAME = getenv("ALIVE_NAME", "op")
 # fill with your id as the owner of the bot
 OWNER_ID = int(os.environ.get("OWNER_ID"))
 DATABASE_URL = os.environ.get("DATABASE_URL")  # fill with your mongodb url
