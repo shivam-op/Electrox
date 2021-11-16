@@ -512,7 +512,7 @@ async def ytplay(_, message: Message):
     global que
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔎")
+    lel = await message.reply("searching..")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -581,12 +581,7 @@ async def ytplay(_, message: Message):
         results[0]["url_suffix"]
 
     except Exception as e:
-        await lel.delete()
-        await message.reply_photo(
-            photo=f"{CMD_IMG}",
-            caption=nofound,
-            reply_markup=bttn,
-        )
+   
         print(str(e))
         return
     try:
@@ -626,7 +621,7 @@ async def ytplay(_, message: Message):
         await lel.delete()
         await message.reply_photo(
             photo="final.png",
-            caption=f"💝 **Qᴜᴇᴜᴇ »** `{position}`\n\n🏷 **ɴᴀᴍᴇ:** [{title[:35]}...]({url})\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ᴢᴀɪᴅ ᴜꜱᴇʀ ʙʏ:** {message.from_user.mention}",
+            caption=f"💝 **Qᴜᴇᴜᴇ »** `{position}`\n\n🏷 **ɴᴀᴍᴇ:** [{title[:35]}...]({url})\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ᴜꜱᴇʀ ʙʏ:** {message.from_user.mention}",
             reply_markup=keyboard,
         )
     else:
