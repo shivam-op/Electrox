@@ -1054,20 +1054,24 @@ async def ytplay(_, message: Message):
     ACTV_CALLS = {}
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS(int(x.chat_id))
-   if chat_id in ACTV_CALLS:
+    if chat_id in ACTV_CALLS:
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
         s_name = title
-        r_by = message.from_user
-        loc = file_path
-        appendable = [s_name, r_by, loc]
-        qeue(appendable)
-        await lel.delete()
-        await message.reply_photo(
-            photo="final.png",
-            caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}",
-            reply_markup=keyboard,
-        )
+        try:
+            r_by = cb.message.reply_to_message.from_user
+        except:
+            r_by = cb.message.from_user
+            loc = file_path
+            appendable = [s_name, r_by, loc]
+            qeue(appendable)
+            await cb.message.delete()
+            await b.send_photo(
+                chat_id,
+                photo="final.png",
+                caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {cb.from_user.mention}",
+                reply_markup=keyboard,
+            )
     else:
         chat_id = get_chat_id(message.chat)
         que[chat_id] = []
