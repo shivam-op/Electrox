@@ -493,7 +493,7 @@ async def m_cb(b, cb):
             )
 
 
-@Client.on_message(command(["play", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["playop", f"play@{BOT_USERNAME}"]) & other_filters)
 async def play(_, message: Message):
     
     bttn = InlineKeyboardMarkup(
@@ -933,7 +933,7 @@ async def lol_cb(b, cb):
                 os.remove("final.png")
 
 
-@Client.on_message(command(["ytplay", f"ytplay@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["play", f"ytplay@{BOT_USERNAME}"]) & other_filters)
 async def ytplay(_, message: Message):
     
     bttn = InlineKeyboardMarkup(
